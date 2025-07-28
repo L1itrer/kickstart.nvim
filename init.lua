@@ -16,9 +16,12 @@ vim.g.have_nerd_font = true
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.mouse = 'v'
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+
+-- Tabs/Spaces config
+vim.o.expandtab = true
+vim.o.tabstop = 2
+vim.opt.softtabstop = 0
+vim.opt.shiftwidth = 0
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 
