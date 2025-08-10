@@ -11,6 +11,8 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.mouse = 'v'
 
+vim.o.winborder = 'rounded'
+
 -- Tabs/Spaces config
 vim.o.expandtab = true
 vim.o.tabstop = 2
@@ -71,6 +73,7 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+vim.cmd 'set completeopt+=noselect'
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
