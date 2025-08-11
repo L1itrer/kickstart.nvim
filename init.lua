@@ -376,7 +376,7 @@ require('lazy').setup({
 
       local opacity_state = true
 
-      vim.keymap.set('n', '<leader>o', function()
+      vim.keymap.set('n', '<leader>to', function()
         if opacity_state then
           vim.cmd.colorscheme 'tokyonight-night'
           opacity_state = false
