@@ -373,6 +373,20 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      local opacity_state = true
+
+      vim.keymap.set('n', '<leader>o', function()
+        if opacity_state then
+          vim.cmd.colorscheme 'tokyonight-night'
+          opacity_state = false
+        else
+          vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+          vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
+          vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'none' })
+          opacity_state = true
+        end
+      end, { desc = '[O]pacity toggle on/off' })
     end,
   },
 
@@ -638,7 +652,7 @@ require('lazy').setup({
         -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = true, cpp = true }
         if disable_filetypes[vim.bo[bufnr].filetype] then
-          return nil
+          return nilelse
         else
           return {
             timeout_ms = 500,
